@@ -37,6 +37,8 @@ function main(){
         const card = document.createElement('div');
         card.classList.add('card');
         card.append(myLibrary[i].title);
+        card.append(myLibrary[i].author);
+        card.append(myLibrary[i].pages);
         console.log(card);
         display.appendChild(card);
     };
