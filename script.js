@@ -1,5 +1,6 @@
 const display = document.querySelector('.display');
 const addBook = document.querySelector('#add-book');
+const submit = document.querySelector('#submit');
 
 let myLibrary = [];
 
@@ -60,8 +61,11 @@ function main(){
 
 addBook.addEventListener('click', ()=>{
     display.classList.add('form-display');
-})
+});
 
+submit.addEventListener('click', ()=>{
+    display.classList.remove('form-display');
+});
 
 addBookToLibrary();
 main();

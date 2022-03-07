@@ -23,6 +23,10 @@
     flex-direction: column;
 }
 
+.form-display{
+    background-color: black;
+}
+
 button{
     height: 4vh;
     width: 10vw;
