@@ -35,11 +35,23 @@ function main(){
 
     for(let i=0; i<myLibrary.length; i++){
         const card = document.createElement('div');
+        const bookTitle = document.createElement('p');
+        const bookAuthor = document.createElement('p');
+        const bookPages = document.createElement('p');
+
         card.classList.add('card');
-        card.append(myLibrary[i].title);
-        card.append(myLibrary[i].author);
-        card.append(myLibrary[i].pages);
-        console.log(card);
+        bookTitle.classList.add('title');
+        bookAuthor.classList.add('author');
+        bookPages.classList.add('pages');
+
+        bookTitle.append(myLibrary[i].title);
+        bookAuthor.append(myLibrary[i].author);
+        bookPages.append(myLibrary[i].pages);
+
+        card.appendChild(bookTitle);
+        card.appendChild(bookAuthor);
+        card.appendChild(bookPages);
+        
         display.appendChild(card);
     };
 };
