@@ -1,4 +1,5 @@
 const display = document.querySelector('.display');
+const addBook = document.querySelector('#add-book');
 
 let myLibrary = [];
 
@@ -51,10 +52,16 @@ function main(){
         card.appendChild(bookTitle);
         card.appendChild(bookAuthor);
         card.appendChild(bookPages);
-        
+
         display.appendChild(card);
     };
 };
+
+
+addBook.addEventListener('click', ()=>{
+    display.classList.add('form-display');
+})
+
 
 addBookToLibrary();
 main();
