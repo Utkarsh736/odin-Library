@@ -1,4 +1,5 @@
 const display = document.querySelector('.display');
+const modalContainer = document.querySelector('#modal-container');
 const addBook = document.querySelector('#add-book');
 const submit = document.querySelector('#submit');
 
@@ -60,11 +61,12 @@ function main(){
 
 
 addBook.addEventListener('click', ()=>{
-    display.classList.add('form-display');
+    modalContainer.classList.add('show');
+    console.log(3);
 });
 
 submit.addEventListener('click', ()=>{
-    display.classList.remove('form-display');
+    modalContainer.classList.remove('show');
 });
 
 addBookToLibrary();

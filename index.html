@@ -9,23 +9,27 @@
 </head>
 <body>
     <div class="container">
-        <header class="header">
-            <h1>My Library</h1>
-        </header>
-
-        <div class="display"></div>
-        <div class="modal">
-            <form action="#" id="form">
-                <label for="book-name">Book:</label>
-                <input type="text"><br>
-                <label for="author-name">Author:</label>
-                <input type="text"><br>
-                <label for="pages">Pages:</label>
-                <input type="number"><br>
-                <button type="submit" form="book-form" value="Submit" id="submit">Submit</button>
-            </form>
+        <div id="modal-container" class="modal-container">
+            <div class="modal">
+                <form action="#" id="form">
+                    <label for="book-name">Book:</label>
+                    <input type="text"><br>
+                    <label for="author-name">Author:</label>
+                    <input type="text"><br>
+                    <label for="pages">Pages:</label>
+                    <input type="number"><br>
+                    <button type="submit" form="book-form" value="Submit" id="submit">Submit</button>
+                </form>
+            </div>
         </div>
-        <button id="add-book">New Book</button>
+        <div class="page">
+            <header class="header">
+                <h1>My Library</h1>
+            </header>
+    
+            <div class="display"></div>
+            <button id="add-book">New Book</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
