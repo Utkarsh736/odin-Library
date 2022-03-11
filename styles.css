@@ -8,6 +8,15 @@
     box-sizing: border-box;
 }
 
+:root{
+    --clr-white: #f1f5f9;
+    --clr-white-shade: #e2e8f0;
+    --clr-grey: #6b7280;
+    --clr-grey-shade: #4b5563;
+    --clr-read: #22c55e;
+    --clr-not-read: #ef4444;
+}
+
 .container{
     background-color: white;
     height: 100vh;
