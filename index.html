@@ -12,13 +12,22 @@
         <div id="modal-container" class="modal-container">
             <div class="modal">
                 <form action="#" id="form">
-                    <label for="book-name">Book:</label>
-                    <input type="text"><br>
-                    <label for="author-name">Author:</label>
-                    <input type="text"><br>
-                    <label for="pages">Pages:</label>
-                    <input type="number"><br>
-                    <button type="submit" form="book-form" value="Submit" id="submit">Submit</button>
+                    <fieldset class="field-item book">
+                        <label for="book-name">Book:</label>
+                        <input type="text"><br>
+                    </fieldset>
+                    <fieldset class="field-item author">
+                        <label for="author-name">Author:</label>
+                        <input type="text"><br>
+                    </fieldset>
+                    <fieldset class="field-item pages">
+                        <label for="pages">Pages:</label>
+                        <input type="number"><br>
+                    </fieldset>
+                    <div class="buttons">
+                        <button class="status" id="status">Not Read</button>
+                        <button type="submit" form="book-form" value="Submit" id="submit">Submit</button>
+                    </div>
                 </form>
             </div>
         </div>
