@@ -55,7 +55,6 @@
 
 .top{
     background-color: white;
-    border: 1px solid black;
     padding: 2vh 7vw;
     height: 15vh;
     display: flex;
@@ -71,7 +70,7 @@
 .display-container{
     background-color: grey;
     height: 75vh;
-    padding: 0 7vw;
+    padding: 2vh 2vw;
 }
 
 .display{
@@ -82,8 +81,14 @@
 }
 
 .card{
+    border: 1px solid black;
+    height: 45%;
+    width: 15%;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .form-display{
