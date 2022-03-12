@@ -1,7 +1,19 @@
 const display = document.querySelector('.display');
 const modalContainer = document.querySelector('#modal-container');
+const form = document.querySelector('#form');
+// const data = new URLSearchParams(new FormData(form).entries());
 const addBook = document.querySelector('#add-book');
 const submit = document.querySelector('#submit');
+
+// console.log(data);
+
+form.addEventListener('submit', (e) => {
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(new FormData(e.target).entries());
+    console.log(data);
+});
+
+// console.log(form);
 
 let myLibrary = [];
 
@@ -62,7 +74,6 @@ function main(){
 
 addBook.addEventListener('click', ()=>{
     modalContainer.classList.add('show');
-    console.log(3);
 });
 
 submit.addEventListener('click', ()=>{
