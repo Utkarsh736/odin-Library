@@ -65,6 +65,7 @@
 }
 
 .field-item{
+    font-weight: bold;
     border: none;
     height: 10%;
     width: 100%;
@@ -75,9 +76,16 @@
 }
 
 fieldset>input{
-    height: 65%;
+    padding: 0 3%;
+    height: 90%;
     width: 70%;
     border-radius: 50px;
+    border: 1px solid var(--clr-grey-shade);
+}
+
+fieldset>input:focus{
+    border: none;
+    outline: 3px solid #22c55e;
 }
 
 .buttons{
@@ -88,7 +96,10 @@ fieldset>input{
 }
 
 .buttons>button{
+    color: var(--clr-white);
+    font-size: large;
     border-radius: 20px;
+    border: none;
 }
 
 #status{
