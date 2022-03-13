@@ -5,13 +5,11 @@ const form = document.querySelector('#form');
 const addBook = document.querySelector('#add-book');
 const submit = document.querySelector('#submit');
 
-// console.log(data);
+// // console.log(data);
+function myFunction() {
+    console.log(form.title);
+}
 
-form.addEventListener('submit', (e) => {
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(new FormData(e.target).entries());
-    console.log(data);
-});
 
 // console.log(form);
 
@@ -77,6 +75,7 @@ addBook.addEventListener('click', ()=>{
 });
 
 submit.addEventListener('click', ()=>{
+    myFunction();
     modalContainer.classList.remove('show');
 });
 
