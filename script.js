@@ -1,17 +1,12 @@
 const display = document.querySelector('.display');
 const modalContainer = document.querySelector('#modal-container');
 const form = document.querySelector('#form');
-// const data = new URLSearchParams(new FormData(form).entries());
 const addBook = document.querySelector('#add-book');
 const submit = document.querySelector('#submit');
 
-// // console.log(data);
 function myFunction() {
-    console.log(form.title);
-}
-
-
-// console.log(form);
+    console.log(form.title.value);
+};
 
 let myLibrary = [];
 
