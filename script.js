@@ -4,9 +4,6 @@ const form = document.querySelector('#form');
 const addBook = document.querySelector('#add-book');
 const submit = document.querySelector('#submit');
 
-function myFunction() {
-    console.log(form.title.value);
-};
 
 let myLibrary = [];
 
@@ -35,33 +32,47 @@ let book5 = new Book('Mrs. Flowers', 'Maya Angelou', 250, true);
 
 
 
-function addBookToLibrary(){
-    myLibrary.push(book1, book2, book3, book4, book5);
+function myFunction() {
+    let formTitle = form.title.value;
+    let formAuthor = form.author.value;
+    let formPages = form.pages.value;
+
+    bookNew = new Book(formTitle, formAuthor, formPages);
+    addBookToLibrary(bookNew);
+    console.log(bookNew);
+
+    form.reset() 
+};
+
+
+
+function addBookToLibrary(entry){
+    myLibrary.push(entry);
+    main();
 }
 
 function main(){
 
-    for(let i=0; i<myLibrary.length; i++){
-        const card = document.createElement('div');
-        const bookTitle = document.createElement('p');
-        const bookAuthor = document.createElement('p');
-        const bookPages = document.createElement('p');
+    let i = myLibrary.length-1;
+    const card = document.createElement('div');
+    const bookTitle = document.createElement('p');
+    const bookAuthor = document.createElement('p');
+    const bookPages = document.createElement('p');
 
-        card.classList.add('card');
-        bookTitle.classList.add('title');
-        bookAuthor.classList.add('author');
-        bookPages.classList.add('pages');
+    card.classList.add('card');
+    bookTitle.classList.add('title');
+    bookAuthor.classList.add('author');
+    bookPages.classList.add('pages');
 
-        bookTitle.append(myLibrary[i].title);
-        bookAuthor.append(myLibrary[i].author);
-        bookPages.append(myLibrary[i].pages);
+    bookTitle.append(myLibrary[i].title);
+    bookAuthor.append(myLibrary[i].author);
+    bookPages.append(myLibrary[i].pages);
 
-        card.appendChild(bookTitle);
-        card.appendChild(bookAuthor);
-        card.appendChild(bookPages);
+    card.appendChild(bookTitle);
+    card.appendChild(bookAuthor);
+    card.appendChild(bookPages);
 
-        display.appendChild(card);
-    };
+    display.appendChild(card);
 };
 
 
@@ -74,5 +85,4 @@ submit.addEventListener('click', ()=>{
     modalContainer.classList.remove('show');
 });
 
-addBookToLibrary();
-main();
+// addBookToLibrary();
