@@ -1,7 +1,7 @@
 const display = document.querySelector('.display');
 const modalContainer = document.querySelector('#modal-container');
 const form = document.querySelector('#form');
-// const status = document.querySelector('#status');
+const statusBtn = document.querySelector('#status');
 const addBook = document.querySelector('#add-book');
 const submit = document.querySelector('#submit');
 
@@ -40,6 +40,11 @@ function myFunction() {
     let formTitle = form.title.value;
     let formAuthor = form.author.value;
     let formPages = form.pages.value;
+
+    statusBtn.addEventListener('click', ()=>{
+        statusBtn.classList.toggle('read');
+    })
+
     console.log(Book.readStatus);
 
 
