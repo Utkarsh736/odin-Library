@@ -111,10 +111,6 @@ fieldset>input:focus{
     border: none;
 }
 
-#status{
-    background-color: var(--clr-not-read);
-}
-
 #submit{
     background-color: var(--clr-grey);
 }
