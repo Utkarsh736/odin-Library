@@ -6,22 +6,21 @@ const submit = document.querySelector('#submit');
 
 let myLibrary = [];
 
-function Book(title, author, pages, isRead=false){
+function Book(title, author, pages, isRead){
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.isRead = isRead;
-    
 };
 
 Book.prototype.readStatus = function(isRead){
-    let status = 'Not Read';
+    let status;
 
     if (this.isRead == true){
-       status.innerHtml = 'Read';
+       status =  'Read';
     }
     else if(this.isRead == false){
-        status.innerHtml = 'Not Read';
+        status = 'Not Read';
     };
 
     return status;
@@ -74,6 +73,7 @@ function main(){
     bookAuthor.append(myLibrary[i].author);
     bookPages.append(myLibrary[i].pages);
     bookReadStatus.append(myLibrary[i].readStatus());
+    console.log(myLibrary[i].readStatus());
 
     card.appendChild(bookTitle);
     card.appendChild(bookAuthor);
