@@ -88,11 +88,20 @@ fieldset>input:focus{
     outline: 3px solid #22c55e;
 }
 
+.status{
+    gap: 10%;
+}
+
+.status>input{
+    width: 20%;
+}
+
+.status>input:focus{
+    outline: none;
+}
+
 .buttons{
-    height: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    height: 15%;
 }
 
 .buttons>button{
