@@ -147,7 +147,7 @@ fieldset>input:focus{
 .display{
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     justify-items: center;
     align-items: center;
@@ -156,8 +156,8 @@ fieldset>input:focus{
 .card{
     background-color: var(--clr-white);
     border: 1px solid black;
-    height: 80%;
-    width: 60%;
+    height: 90%;
+    width: 50%;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
