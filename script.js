@@ -68,12 +68,16 @@ function main(){
     bookAuthor.classList.add('author');
     bookPages.classList.add('pages');
     bookReadStatus.classList.add('readStatus');
+    if(bookNew.isRead===true){
+        bookReadStatus.classList.add('read');
+    }else{
+        bookReadStatus.classList.add('notRead');
+    };
 
     bookTitle.append(myLibrary[i].title);
     bookAuthor.append(myLibrary[i].author);
     bookPages.append(myLibrary[i].pages);
     bookReadStatus.append(myLibrary[i].readStatus());
-    console.log(myLibrary[i].readStatus());
 
     card.appendChild(bookTitle);
     card.appendChild(bookAuthor);
