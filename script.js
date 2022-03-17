@@ -111,6 +111,6 @@ function status_change(statusbtn){
 
         statusbtn.classList.toggle('read');
         statusbtn.classList.toggle('notRead');
-        
+
     });
 };
