@@ -87,7 +87,6 @@ function main(){
     display.appendChild(card);
 };
 
-
 addBook.addEventListener('click', ()=>{
     modalContainer.classList.add('show');
 });
@@ -95,4 +94,23 @@ addBook.addEventListener('click', ()=>{
 submit.addEventListener('click', ()=>{
     myFunction();
     modalContainer.classList.remove('show');
+    const statusbtn = document.querySelector('.readStatus');
+    status_change(statusbtn);
+    console.log(statusbtn);
 });
+
+
+function status_change(statusbtn){
+    statusbtn.addEventListener('click', ()=>{
+
+        if(statusbtn.className == 'readStatus read'){
+            statusbtn.innerHTML = 'Not Read';
+        }else if(statusbtn.className == 'readStatus notRead'){
+            statusbtn.innerHTML = 'Read';
+        };
+
+        statusbtn.classList.toggle('read');
+        statusbtn.classList.toggle('notRead');
+        
+    });
+};
