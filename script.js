@@ -1,6 +1,7 @@
 const display = document.querySelector('.display');
 const modalContainer = document.querySelector('#modal-container');
 const form = document.querySelector('#form');
+const statusbtn = document.querySelector('.readStatus');
 const addBook = document.querySelector('#add-book');
 const submit = document.querySelector('#submit');
 
@@ -94,13 +95,13 @@ addBook.addEventListener('click', ()=>{
 submit.addEventListener('click', ()=>{
     myFunction();
     modalContainer.classList.remove('show');
-    const statusbtn = document.querySelector('.readStatus');
-    status_change(statusbtn);
-    console.log(statusbtn);
+    // status_change();
+    // console.log(statusbtn);
+    console.log(myLibrary);
 });
 
 
-function status_change(statusbtn){
+function status_change(){
     statusbtn.addEventListener('click', ()=>{
 
         if(statusbtn.className == 'readStatus read'){
@@ -114,3 +115,4 @@ function status_change(statusbtn){
 
     });
 };
+
