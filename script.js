@@ -63,6 +63,7 @@ function main(){
     const bookAuthor = document.createElement('p');
     const bookPages = document.createElement('p');
     const bookReadStatus = document.createElement('button');
+    const removebtn = document.createElement('button');
 
     card.classList.add('card');
     bookTitle.classList.add('title');
@@ -74,16 +75,19 @@ function main(){
     }else{
         bookReadStatus.classList.add('notRead');
     };
+    removebtn.classList.add('remove');
 
     bookTitle.append(myLibrary[i].title);
     bookAuthor.append(myLibrary[i].author);
     bookPages.append(myLibrary[i].pages);
     bookReadStatus.append(myLibrary[i].readStatus());
+    removebtn.textContent = 'Remove';
 
     card.appendChild(bookTitle);
     card.appendChild(bookAuthor);
     card.appendChild(bookPages);
     card.appendChild(bookReadStatus);
+    card.appendChild(removebtn);
 
     display.appendChild(card);
 };
