@@ -43,7 +43,6 @@ function myFunction() {
 
     bookNew = new Book(formTitle, formAuthor, formPages, formReadStatus);
     addBookToLibrary(bookNew);
-    console.log(bookNew);
 
     form.reset() 
 };
@@ -76,6 +75,7 @@ function main(){
         bookReadStatus.classList.add('notRead');
     };
     removebtn.classList.add('remove');
+    removebtn.addEventListener('click', remove);
 
     bookTitle.append(myLibrary[i].title);
     bookAuthor.append(myLibrary[i].author);
@@ -120,3 +120,8 @@ function status_change(){
     });
 };
 
+
+function remove(){
+    // console.log(myLibrary.map(function(e) { return e.bookTitle; }).indexOf());
+    console.log(Book.title);
+}
