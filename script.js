@@ -57,6 +57,11 @@ function addBookToLibrary(entry){
 function main(){
 
     let i = myLibrary.length-1;
+
+    // if(i==0){
+    //     window.onload();
+    // };
+
     const card = document.createElement('div');
     const bookTitle = document.createElement('p');
     const bookAuthor = document.createElement('p');
@@ -121,7 +126,13 @@ function status_change(){
 };
 
 
-function remove(){
-    // console.log(myLibrary.map(function(e) { return e.bookTitle; }).indexOf());
-    console.log(Book.title);
-}
+function remove(e){
+    let toRemoveTitle = e.path[1].children[0].innerHTML;
+    let toRemoveIndex = myLibrary.findIndex(i => i.title == toRemoveTitle);
+
+    if(toRemoveIndex > -1){
+        myLibrary.splice(toRemoveIndex, 1);
+        main();
+        console.log(myLibrary);
+    };
+};
