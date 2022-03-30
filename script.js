@@ -58,10 +58,6 @@ function main(){
 
     let i = myLibrary.length-1;
 
-    // if(i==0){
-    //     window.onload();
-    // };
-
     const card = document.createElement('div');
     const bookTitle = document.createElement('p');
     const bookAuthor = document.createElement('p');
