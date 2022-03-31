@@ -51,12 +51,10 @@ function myFunction() {
 
 function addBookToLibrary(entry){
     myLibrary.push(entry);
-    main();
+    main(entry);
 }
 
-function main(){
-
-    let i = myLibrary.length-1;
+function main(addBook){
 
     const card = document.createElement('div');
     const bookTitle = document.createElement('p');
@@ -78,10 +76,10 @@ function main(){
     removebtn.classList.add('remove');
     removebtn.addEventListener('click', remove);
 
-    bookTitle.append(myLibrary[i].title);
-    bookAuthor.append(myLibrary[i].author);
-    bookPages.append(myLibrary[i].pages);
-    bookReadStatus.append(myLibrary[i].readStatus());
+    bookTitle.append(addBook.title);
+    bookAuthor.append(addBook.author);
+    bookPages.append(addBook.pages);
+    bookReadStatus.append(addBook.readStatus());
     removebtn.textContent = 'Remove';
 
     card.appendChild(bookTitle);
@@ -106,6 +104,19 @@ submit.addEventListener('click', ()=>{
 });
 
 
+function resetDisplay(){
+    display.innerHTML='';
+};
+
+
+function updateDisplay(){
+    resetDisplay();
+    for(let element of myLibrary){
+        main(element);
+    };
+};
+
+
 function status_change(){
     statusbtn.addEventListener('click', ()=>{
 
@@ -128,7 +139,8 @@ function remove(e){
 
     if(toRemoveIndex > -1){
         myLibrary.splice(toRemoveIndex, 1);
-        main();
+        // main();
+        updateDisplay();
         console.log(myLibrary);
     };
 };
