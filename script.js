@@ -1,7 +1,6 @@
 const display = document.querySelector('.display');
 const modalContainer = document.querySelector('#modal-container');
 const form = document.querySelector('#form');
-// const statusbtn = document.querySelector('.readStatus');
 const addBook = document.querySelector('#add-book');
 const submit = document.querySelector('#submit');
 
@@ -26,13 +25,6 @@ Book.prototype.readStatus = function(isRead){
 
     return status;
 }; 
-
-let book1 = new Book('Harry Potter', 'J.K. Rowling', 295, true);
-let book2 = new Book('Sherlock Holmes', 'Arthur Conan Doyle', 500);
-let book3 = new Book('Game of Thrones', 'George RR Martin', 300, true);
-let book4 = new Book('Shining', 'Stephen King', 400);
-let book5 = new Book('Mrs. Flowers', 'Maya Angelou', 250, true);
-
 
 
 function myFunction() {
@@ -121,16 +113,19 @@ function updateDisplay(){
 
 function status_change(e){
 
-    console.log(e.path[1].children[0].innerHTML);
+    let statusbtn = document.querySelector('.readStatus');
+    let curr_status = e.target.textContent;
 
-    // if(statusbtn.className == 'readStatus read'){
-    //     statusbtn.innerHTML = 'Not Read';
-    // }else if(statusbtn.className == 'readStatus notRead'){
-    //     statusbtn.innerHTML = 'Read';
-    // };
-
-    // statusbtn.classList.toggle('read');
-    // statusbtn.classList.toggle('notRead');
+    if(curr_status === 'Read'){
+        statusbtn.innerHTML = 'Not Read';
+        statusbtn.classList.remove('read');
+        statusbtn.classList.add('notRead');
+    }
+    else{
+        statusbtn.innerHTML = 'Read';
+        statusbtn.classList.remove('notRead');
+        statusbtn.classList.add('read');
+    };
 
 };
 
