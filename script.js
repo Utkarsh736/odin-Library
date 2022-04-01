@@ -1,7 +1,7 @@
 const display = document.querySelector('.display');
 const modalContainer = document.querySelector('#modal-container');
 const form = document.querySelector('#form');
-const statusbtn = document.querySelector('.readStatus');
+// const statusbtn = document.querySelector('.readStatus');
 const addBook = document.querySelector('#add-book');
 const submit = document.querySelector('#submit');
 
@@ -74,7 +74,10 @@ function main(addBook){
         bookReadStatus.classList.add('notRead');
     };
     removebtn.classList.add('remove');
+
     removebtn.addEventListener('click', remove);
+    bookReadStatus.addEventListener('click', status_change);
+ 
 
     bookTitle.append(addBook.title);
     bookAuthor.append(addBook.author);
@@ -98,8 +101,7 @@ addBook.addEventListener('click', ()=>{
 submit.addEventListener('click', ()=>{
     myFunction();
     modalContainer.classList.remove('show');
-    // status_change();
-    // console.log(statusbtn);
+    // statusbtn.addEventListener('click', status_change);
     console.log(myLibrary);
 });
 
@@ -117,19 +119,19 @@ function updateDisplay(){
 };
 
 
-function status_change(){
-    statusbtn.addEventListener('click', ()=>{
+function status_change(e){
 
-        if(statusbtn.className == 'readStatus read'){
-            statusbtn.innerHTML = 'Not Read';
-        }else if(statusbtn.className == 'readStatus notRead'){
-            statusbtn.innerHTML = 'Read';
-        };
+    console.log(e.path[1].children[0].innerHTML);
 
-        statusbtn.classList.toggle('read');
-        statusbtn.classList.toggle('notRead');
+    // if(statusbtn.className == 'readStatus read'){
+    //     statusbtn.innerHTML = 'Not Read';
+    // }else if(statusbtn.className == 'readStatus notRead'){
+    //     statusbtn.innerHTML = 'Read';
+    // };
 
-    });
+    // statusbtn.classList.toggle('read');
+    // statusbtn.classList.toggle('notRead');
+
 };
 
 
@@ -139,8 +141,6 @@ function remove(e){
 
     if(toRemoveIndex > -1){
         myLibrary.splice(toRemoveIndex, 1);
-        // main();
         updateDisplay();
-        console.log(myLibrary);
     };
 };
